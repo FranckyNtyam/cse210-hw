@@ -39,7 +39,7 @@ Console.WriteLine($"The average is: {average}");
 Console.WriteLine($"The largest number is: {largest_number}");
 Console.WriteLine($"The smallest positive number is: {smallestPositiveNumber}");
 Console.WriteLine("The sorted list is:");
-numbers.Sort();
+numbers.Sort(); // Sorted list numbers.
 foreach (double num in numbers)
 {
     Console.WriteLine(num);
