@@ -62,7 +62,7 @@ class Program
             Console.WriteLine("Congratulation you passed your examen.");
         }
         else
-        {Console.WriteLine("Never give up! go ahead");
+        {Console.WriteLine("You failed but Never give up! go ahead");
         }
     }
 }
