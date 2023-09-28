@@ -44,7 +44,7 @@ class Program
          theJournal.counter++;
         }
         while (menuSelect < 5);
-        Console.WriteLine(theJournal.counter);
+        
       
         
         

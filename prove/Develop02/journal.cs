@@ -15,9 +15,9 @@ public class Journal
 
     public void Display()
     {
-        foreach (string i in _entries)
+        for (int i = 0; i < _entries.Count-1; i++)
         {
-          Console.WriteLine(i);
+          Console.WriteLine(_entries[i]);
         }
     }
     public void SaveToFile(string file)
