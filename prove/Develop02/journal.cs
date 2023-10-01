@@ -38,12 +38,12 @@ public class Journal
     }
     public void LoadFromFile(string file)
     {
-       List<string> _entries =new List<string>(File.ReadAllLines(file));
+       string[] entries = File.ReadAllLines(file);
        
         
-        foreach (string line in _entries)
+        foreach (string line in entries)
        {
-         _entries = line.Split("").ToList();
+         _entries.Add(line);
            
        }
         
