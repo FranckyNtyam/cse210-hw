@@ -3,7 +3,7 @@ using System.Data;
 using System.Diagnostics.Metrics;
 using System.Formats.Asn1;
 using System.IO;
-
+using System.Text;
 PromptGenerator prompt = new PromptGenerator();
 Journal theJournal = new Journal();
 Entry entries = new Entry();
@@ -18,6 +18,7 @@ Console.WriteLine("Welcome to the Journal Program!");
    do
    { 
     Console.WriteLine("Please select one of the following choices:");
+    Console.WriteLine("0. Add New Prompt");
     Console.WriteLine("1. Write");
     Console.WriteLine("2. Display");
     Console.WriteLine("3. Load");
@@ -27,7 +28,19 @@ Console.WriteLine("Welcome to the Journal Program!");
     string selectMenu = Console.ReadLine();
     menuSelect = int.Parse(selectMenu);
    
-
+    
+   
+    if (menuSelect == 0)
+    {
+        Console.WriteLine("Add your new prompt");
+        string newPrompt = Console.ReadLine();
+        prompt.AddPrompt(newPrompt);
+        Console.WriteLine("In what file to save new prompt?");
+        string fileName = Console.ReadLine();
+        prompt.SaveToFile(fileName);
+       
+        
+    }
     if (menuSelect == 1)
     {
         Console.WriteLine(entries._promptText);
@@ -55,7 +68,7 @@ Console.WriteLine("Welcome to the Journal Program!");
         
     }
 
-      theJournal.counter++;
+      
     }
     while (menuSelect < 5);
     

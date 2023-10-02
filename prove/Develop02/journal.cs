@@ -1,9 +1,10 @@
 using System.IO;
+using System.Text;
 public class Journal
 {
     public List<string> _entries = new List<string>();
 
-    public int counter;
+    public int counter = 0;
     public string[] arrayLine;
    
    DateTime date = DateTime.Now;

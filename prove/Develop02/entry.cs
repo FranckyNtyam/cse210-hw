@@ -9,4 +9,5 @@ public class Entry
    {
     return $"Date: {_date} - Prompt:  {_promptText} \n {_entryText}." ;
    }
+  
 }
