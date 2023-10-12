@@ -1,10 +1,10 @@
 public class Reference
 {
     // create attributes private
-    private string _book;
-    private int _chapter;
-    private int _verse;
-    private int _endVerse;
+    private string _book {get; set;}
+    private int _chapter {get; set;}
+    private int _verse {get; set;}
+    private int _endVerse {get; set;}
 
     public Reference()
     {

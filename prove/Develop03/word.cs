@@ -1,17 +1,18 @@
+using System.Collections.Generic;
+using System;
 public class Word
 {
     private string _text;
-    private bool _isHidden;
+    private bool _isHidden = true;
     
-    Random random = new Random();
-    // create the getter and setter of attribute _text.
-    public bool GetIshidden()
+    // create getter and setter of text attribute
+    public string GetText()
     {
-        return _isHidden;
+        return _text;
     }
-    public void SetIshidden(bool ishidden)
+    public void SetText(string text)
     {
-        _isHidden = ishidden;
+        _text = text;
     }
 
     public Word()
@@ -20,43 +21,42 @@ public class Word
     {
         _text = text;
     }
-    public void Hide()
+    public string Hide(int randomWord)
     {
+       List <string> words = _text.Split(" ").ToList();
         
-        
-            string[] wordArray = _text.Split(" ");
-            int index = random.Next(wordArray.Count());
-           
-            for (int i = 0; i < wordArray.Length; i++)
-            {
-                 wordArray[index] = "_";
-                Console.Write(wordArray[i]);
-                Console.Write(" ");
-         }
-        
-    }
-    public void Show()
-    {
-        
-        
+            words[randomWord] = "___";
             
-            string[] wordArray = _text.Split(" ");
-            int index = random.Next(wordArray.Count());
-            for (int i = 0; i < wordArray.Length; i++)
-            {
-                Console.Write(wordArray[i]);
-                Console.Write(" ");
-            }
+           return words[randomWord];
+    }
+    public string Show(int showRandomWord)
+    {
+         List<string> words = _text.Split(" ").ToList();
         
+            return words[showRandomWord];
+           
+         
     }
 
     public bool IsHidden()
     {
-       return true;
+      List<string> words = _text.Split(" ").ToList();
+        words.Contains("___");
+
+     return _isHidden;
     }
 
-    public string GetDisplayText()
+    public string GetDisplayText(int randomWord)
     {
+       if (IsHidden())
+       {
+        _text = Hide(randomWord);
+       }
+       else
+       {
+        _text = Show(randomWord);
+       }
+        
        return _text;
     }
 }
