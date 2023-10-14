@@ -12,8 +12,10 @@ class Program
             Console.Clear();
             scripture.GetDisplayText();
             Console.WriteLine();
+
            string enterOfUser = " ";
-            while(enterOfUser.ToLower() != "quit")
+          
+            while(true)
             {
                 Console.WriteLine();
                 Console.WriteLine("Press enter to hide a word or type quit to exit:");
@@ -34,8 +36,12 @@ class Program
 
                         return;
                     }
+                    
                 }
-           }
 
+           }
+           
+        
+       
     }
 }

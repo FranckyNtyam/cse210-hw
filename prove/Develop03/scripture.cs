@@ -8,17 +8,17 @@ public class Scripture
     
     private string _reference;
     private List<string> _words = new List<string>();
+  
     private string _text;
     
-    Word word1 = new Word();
-    public void HideRandomWords()
+    
+    public void HideRandomWords( )
     {
           List<string>  words = _text.Split(" ").ToList();
-            Random random = new Random();
-            int index = random.Next(0, words.Count);
-            string hideWord = words[index];
-      // add words to the list _words
-           _words.Add(hideWord);
+            Random random = new Random(Guid.NewGuid().GetHashCode());
+            int index = random.Next(words.Count);
+                _words.Add(words[index]);
+            
     }
     public Scripture(string reference, string text)
     {
@@ -35,20 +35,24 @@ public class Scripture
       {
         if (_words.Contains(word))
         {
-          Console.Write("___");
+          Console.Write(" ___");
+          Console.Write(" ");
+         
         }
         else
         {
            Console.Write(word + " ");
         }
+        
       }
       Console.WriteLine();
       
     }
     public bool IsCompletelyHidden()
     {
-       string[] words = _text.Split(" ");
+        List<string> words = _text.Split(" ").ToList();
+        
 
-       return _words.Count == words.Length;
+       return _words.TrueForAll(x => x == "__") ;
     }
 }

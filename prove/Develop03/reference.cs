@@ -6,10 +6,7 @@ public class Reference
     private int _verse {get; set;}
     private int _endVerse {get; set;}
 
-    public Reference()
-    {
-        
-    }
+    
     // create the first constructor with three paramaters.
     public Reference(string book, int chapter, int verse)
     {
