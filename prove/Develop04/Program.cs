@@ -4,6 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        Console.Clear();
+        menu menu = new menu();
+        menu.DisplayMenu();
+        string userInput = Console.ReadLine();
+        int  userChoice = int.Parse(userInput);
+        BreathingActivity breathing = new BreathingActivity();
+        breathing.Run(userChoice);
+        ReflectingActivity reflecting = new ReflectingActivity();
+        reflecting.Run(userChoice);
+        ListingActivity listing = new ListingActivity();
+        listing.Run(userChoice);
     }
 }

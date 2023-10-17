@@ -6,14 +6,21 @@ class Program
     {
         Console.WriteLine("Hello Prep5 World!");
         Console.WriteLine();
+        /*
         Console.WriteLine("Assignment Prep 5");
          DisplayWelcome();
         string userName = PromptUserName();
         int userNumber = PromptUserNumber();
         int square_Number = SquareNumber(userNumber);
         DisplayResult(userName, square_Number);
-    }
+        */
 
+        Student student = new Student("Ntyam", "07");
+        string number = student.GetName();
+        Console.WriteLine (number);
+        
+    }
+/*
         // the first function display the message.
         static void DisplayWelcome()
         {
@@ -45,6 +52,6 @@ class Program
         static void DisplayResult(string userName, int square_number)
         {
             Console.WriteLine($"{userName}, the square of your number is {square_number}");
-        }
+        }*/
 
 }
