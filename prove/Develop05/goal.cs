@@ -1,6 +1,6 @@
 using  System;
 
-public class Goal
+public abstract class Goal
 {
     private string _shortName;
     private string _description;
@@ -13,19 +13,14 @@ public class Goal
         _points = points;
     }
 
-    public void RecordEvent()
-    {}
-    public bool IsComplete()
+    public abstract void RecordEvent();
+    public abstract bool IsComplete();
+    
+    public virtual string GetDetailsString()
     {
-        return true;
-    }
-    public string GetDetailsString()
-    {
-        return "";
+       return "";
     }
 
-    public string GetStringRepresentation()
-    {
-        return "";
-    }
+    public abstract string GetStringRepresentation();
+   
 }

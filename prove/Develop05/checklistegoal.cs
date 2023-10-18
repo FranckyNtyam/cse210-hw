@@ -12,21 +12,25 @@ public CheckListGoal(string name, string description, string points, int target,
     _bonus = bonus;
 }
 
-public void RecordEvent()
-{}
-public bool IsComplete()
-{
-    return true;
-}
-
-  public string GetDetailsString()
+  public override string GetDetailsString()
     {
         return "";
     }
 
-    public string GetStringRepresentation()
+  
+
+    public override void RecordEvent()
     {
-        return "";
+        throw new NotImplementedException();
     }
 
+    public override bool IsComplete()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override string GetStringRepresentation()
+    {
+        throw new NotImplementedException();
+    }
 }

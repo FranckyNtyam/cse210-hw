@@ -5,15 +5,18 @@ public class EternalGoal: Goal
     public EternalGoal(string name, string description, string points): base (name, description, points)
     {}
 
-    public void RecordEvent()
-     {}
-    public bool IsComplete()
+    public override void RecordEvent()
     {
-        return true;
+        throw new NotImplementedException();
     }
 
-     public string GetStringRepresentation()
+    public override bool IsComplete()
     {
-        return "";
+        throw new NotImplementedException();
+    }
+
+    public override string GetStringRepresentation()
+    {
+        throw new NotImplementedException();
     }
 }
