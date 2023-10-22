@@ -5,8 +5,25 @@ public class CheckListGoal: Goal
 private int _amountCompleted;
 private int _target;
 private int _bonus;
+// create the Getter and setter of the attributes
 
-public CheckListGoal(string name, string description, string points, int target, int bonus): base (name, description, points)
+public int GetTarget()
+{
+  return _target;
+}
+public void SetTarget(int target)
+{
+  _target = target;
+}
+public int GetBonus()
+{
+  return _bonus;
+}
+public void SetBonus(int bonus)
+{
+  _bonus = bonus;
+}
+public CheckListGoal(string name, string description, int points, int target, int bonus): base (name, description, points)
 {
     _target = target;
     _bonus = bonus;
@@ -21,7 +38,7 @@ public CheckListGoal(string name, string description, string points, int target,
 
     public override void RecordEvent()
     {
-        throw new NotImplementedException();
+     
     }
 
     public override bool IsComplete()
