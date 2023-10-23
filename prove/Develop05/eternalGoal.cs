@@ -7,21 +7,32 @@ public class EternalGoal: Goal
 
     public override void RecordEvent()
     {
-     
+        Console.WriteLine($"Congratulations! You have earned {base.GetPoint()} points!");
+       int numberOfPoint = 0;
+       Console.WriteLine($"You now have {numberOfPoint+=base.GetPoint()} points");
     }
 
     public override bool IsComplete()
     {
-        throw new NotImplementedException();
+        if (base.GetName() !="" && base.GetDescription() !="" && base.GetPoint() != 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+        
     }
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+        return $"EternalGoal:{base.GetName()},{base.GetDescription()},{base.GetPoint()}";
     }
 
     public override string GetDetailsString()
     {
-        throw new NotImplementedException();
+        return $"[] {base.GetName()} ({base.GetDescription()})";
     }
 }

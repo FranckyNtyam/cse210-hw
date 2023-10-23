@@ -1,36 +1,35 @@
 using System;
 
-public class SimpleGoal : Goal
+public class NegativeGoal : Goal
 {
-    private bool _isComplete;
 
     
-    public SimpleGoal(string name, string description, int points): base (name, description, points)
+    public NegativeGoal(string name, string description, int points): base (name, description, points)
     {
         name = "Unknown";
         description = "Unknown";
         points = 0;
-        _isComplete = false;
+        
     }
 
     public override void RecordEvent()
      {
-       Console.WriteLine($"Congratulations! You have earned {base.GetPoint()} points!");
+       Console.WriteLine($"Sorry! You will lose {base.GetPoint()} points!");
        int numberOfPoint = 0;
-       Console.WriteLine($"You now have {numberOfPoint+=base.GetPoint()} points");
+       Console.WriteLine($"You lost {numberOfPoint+=base.GetPoint()} points");
      }
     public override bool IsComplete()
     {
         if (base.GetName() !="" && base.GetDescription() !="" && base.GetPoint() != 0)
         {
-            _isComplete = true;
+            return true;
         }
         else
         {
-            _isComplete = false;
+            return false;
         }
 
-        return _isComplete;
+        
     }
 
     public override string GetDetailsString()
@@ -41,7 +40,7 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal:{base.GetName()},{base.GetDescription()},{base.GetPoint()},{IsComplete()}";
+        return $"NegativeGoal:{base.GetName()},{base.GetDescription()},{base.GetPoint()}";
     }
 
    

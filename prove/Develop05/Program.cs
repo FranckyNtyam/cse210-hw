@@ -7,36 +7,12 @@ class Program
         GoalManager goalManager = new GoalManager();
        
        
-        while (true)
-        {
             goalManager.Star();
             
-        }
-        
-            
-            // string userInput = Console.ReadLine();
-    //         int userChoice = 0;
-
-    //     while(userChoice != 6);
-    //     {  
-           
-               
-    //         Console.Clear();
-    //         goalManager.Star();
-            
-    //         //   if (userChoice == 1)
-    //         // {
-    //         //     goalManager.ListGoalNames();
-    //         //     // userInput = Console.ReadLine();
-    //         //     // userChoice = int.Parse(userInput);
-    //         //     // if (userChoice == 1)
-    //         //     // {
-    //         //     //     SimpleGoal simpleGoal = new SimpleGoal("", "", 0, false);
-    //         //     //     simpleGoal.RecordEvent();
-    //         //     // }
-    //         // }
-           
-    //    }
+        // Showing creativity and Exceeding Requirement
+        /* I have added a new goal called the negative goal. The new goal asks the user to create the bad habits he is supposed to not repeat. If the habit is repeated, he will lose the points.
+        To accomplish it, I have created a new deriver class called NegativeGoal. 
+        */
         
     }
 }

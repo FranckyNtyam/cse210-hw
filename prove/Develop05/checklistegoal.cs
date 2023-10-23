@@ -2,7 +2,7 @@ using System;
 
 public class CheckListGoal: Goal
 {
-private int _amountCompleted;
+private int _amountCompleted = 0;
 private int _target;
 private int _bonus;
 // create the Getter and setter of the attributes
@@ -23,31 +23,50 @@ public void SetBonus(int bonus)
 {
   _bonus = bonus;
 }
-public CheckListGoal(string name, string description, int points, int target, int bonus): base (name, description, points)
+public int GetAmountCompleted()
+{
+  return _amountCompleted;
+}
+public void SetAmountCompleted(int amountCompleted)
+{
+  _amountCompleted = amountCompleted;
+}
+
+public CheckListGoal(string name, string description, int points, int target, int bonus, int amountCompleted): base (name, description, points)
 {
     _target = target;
     _bonus = bonus;
+    _amountCompleted = amountCompleted;
 }
 
   public override string GetDetailsString()
     {
-        return "";
+        return $"[] {base.GetName()} ({base.GetDescription()}) --Currently completed: {_amountCompleted}/{_target}";
     }
 
   
 
     public override void RecordEvent()
     {
-     
+        Console.WriteLine($"Congratulations! You have earned {base.GetPoint()} points!");
+        int numberOfPoint = 0;
+        Console.WriteLine($"You now have {numberOfPoint+=base.GetPoint()} points");
     }
 
     public override bool IsComplete()
     {
-        throw new NotImplementedException();
+        if (base.GetName() !="" && base.GetDescription() !="" && base.GetPoint() != 0 && _amountCompleted == _target)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+        return $"CheckListGoal:{base.GetName()},{base.GetDescription()},{base.GetPoint()},{_bonus},{_target},{_amountCompleted}";
     }
 }
