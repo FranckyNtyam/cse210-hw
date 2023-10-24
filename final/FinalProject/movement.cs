@@ -1,6 +1,10 @@
 using System;
 
-public class MovementOfAccount
+public enum MovementOfAccount
 {
+   
+    
+        Credited,
+        Debtor
     
 }

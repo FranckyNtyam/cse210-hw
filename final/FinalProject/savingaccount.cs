@@ -1,27 +1,26 @@
 using System;
 
-public class CurrentAccount : Account
+public class SavingAccount : Account
 {
-    private double _accountOverdraft;
+    private double _subscriptionRate;
 
-    // public override decimal _balance 
-    // {
-    //     get
-    //     {
-    //         return base._balance * (decimal)(1 + _subscriptionRate);
-    //     }
-    // }
-    // create Constructor with one parameter
-    public CurrentAccount()
+    public override decimal _balance 
     {
-        _accountOverdraft = 200;
+        get
+        {
+            return base._balance * (decimal)(1 + _subscriptionRate);
+        }
+    }
+    // create Constructor with one parameter
+    public SavingAccount()
+    {
+        _subscriptionRate = 0;
     }
 
-    // method that help to operate in a current account
+     // method that help to operate in a savings account
 
-    public void OperateInCurrentAccount()
+    public void OperateInSavingAccount()
     {
-
            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Types of Operations:");
@@ -48,13 +47,14 @@ public class CurrentAccount : Account
     }
     public override void DisplayAccountDetails()
     {
-        Console.WriteLine("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-        Console.WriteLine("Current account of : " + base.GetAccountOwner());
+        Console.WriteLine("*************************************");
+        Console.WriteLine("Savings account of : " + base.GetAccountOwner());
         Console.WriteLine($"\tBalance : {_balance}" );
-        Console.WriteLine($"\tOverdraft allowed : {_accountOverdraft}");
+        Console.WriteLine($"\tRate : {_subscriptionRate}");
         Console.WriteLine("\n\nOperations :");
         base.DisplayOperations();
-
         
+
+        Console.WriteLine("*************************************");
     }
 }
