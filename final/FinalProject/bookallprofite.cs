@@ -1,9 +1,9 @@
 using System;
 
-public class BookAllprofitAccount: Account
+public class BookAllProfitAccount: Account
 {
     private IProfitCalculator _profitCalculator;
-    public BookAllprofitAccount(IProfitCalculator calculator)
+    public BookAllProfitAccount(IProfitCalculator calculator)
     {
         _profitCalculator = calculator;
     }

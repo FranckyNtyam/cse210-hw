@@ -12,7 +12,7 @@ public class AccountManager
     }
      SavingAccount savingAccount = new SavingAccount();
      CurrentAccount currentAccount = new CurrentAccount();
-     BookAllprofitAccount bookAllprofitAccount = new BookAllprofitAccount(new FixedRateProfit(0.2));
+     BookAllProfitAccount bookAllProfitAccount = new BookAllProfitAccount(new FixedRateProfit(0.2));
      
     public void Star()
     {
@@ -22,7 +22,7 @@ public class AccountManager
             string customerName = Console.ReadLine();
             savingAccount.SetAccountOwner(customerName);
             currentAccount.SetAccountOwner(customerName);
-            bookAllprofitAccount.SetAccountOwner(customerName);
+            bookAllProfitAccount.SetAccountOwner(customerName);
 
         while(true)
         {
@@ -50,7 +50,7 @@ public class AccountManager
             }
             else if ( operationsChoose == 4)
             {
-                DisplayAccountDetails();
+                DisplayAllAccountDetails();
         
                 
             }
@@ -76,7 +76,7 @@ public class AccountManager
             Console.Write("Apply some fixe rate in this account: ");
              double rateApply = double.Parse(Console.ReadLine());
             IProfitCalculator fixedRateProfit = new FixedRateProfit(rateApply);
-            bookAllprofitAccount = new BookAllprofitAccount(fixedRateProfit);
+            bookAllProfitAccount = new BookAllProfitAccount(fixedRateProfit);
             Console.WriteLine("Types of Operations:");
             Console.WriteLine("1. Credited Account");
             Console.WriteLine("2. Debited Account");
@@ -87,13 +87,13 @@ public class AccountManager
             {
                 Console.Write("What is the amount to be credited? ");
                 int amountCredited = int.Parse(Console.ReadLine());
-                bookAllprofitAccount.Credited(amountCredited);
+                bookAllProfitAccount.Credited(amountCredited);
             }
             else if (operationChoosing == 2)
             {
                Console.Write("What is the amount to be debited? ");
                 int amountDebited = int.Parse(Console.ReadLine());
-                bookAllprofitAccount.Debtor(amountDebited);
+                bookAllProfitAccount.Debtor(amountDebited);
             }
             else
             {
@@ -101,13 +101,13 @@ public class AccountManager
             }
         }
 
-     public void DisplayAccountDetails()
+     public void DisplayAllAccountDetails()
         {
             Console.WriteLine();
             Console.WriteLine(_date);
             Console.WriteLine();
             savingAccount.DisplayAccountDetails();
             currentAccount.DisplayAccountDetails();
-            bookAllprofitAccount.DisplayAccountDetails();
+            bookAllProfitAccount.DisplayAccountDetails();
         }
 }

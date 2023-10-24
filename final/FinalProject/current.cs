@@ -4,13 +4,6 @@ public class CurrentAccount : Account
 {
     private double _accountOverdraft;
 
-    // public override decimal _balance 
-    // {
-    //     get
-    //     {
-    //         return base._balance * (decimal)(1 + _subscriptionRate);
-    //     }
-    // }
     // create Constructor with one parameter
     public CurrentAccount()
     {

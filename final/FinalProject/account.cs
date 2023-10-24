@@ -65,16 +65,6 @@ public abstract class Account
          _operations.Add(operationOnAccount);
      }
      
-      public void Credited (decimal amount, Account account)
-    {
-        Credited(amount);
-        account.Debtor(amount);
-    }
-     public void Debtor( decimal amount ,Account account)
-     {
-        Debtor(amount);
-        account.Credited(amount);
-     }
      public void DisplayOperations()
      {
            foreach (OperationOnAccount operation in _operations )
