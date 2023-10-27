@@ -39,7 +39,7 @@ public abstract class Account
                 if (operation._typeOfMovement == MovementOfAccount.Debit)
                 {
                     total -= operation._amount;
-                    break;
+                    
                 }
    
 
@@ -89,7 +89,7 @@ public abstract class Account
                 // Console.Write("\t-");
                 // Console.WriteLine(operation._amount);
                 opertionDone.Add($"\t-{operation._amount}");
-                break;
+                
             }
             
         }
