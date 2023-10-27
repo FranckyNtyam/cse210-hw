@@ -22,7 +22,7 @@ public class AccountManager
             string customerName = Console.ReadLine();
             savingAccount.SetAccountOwner(customerName);
             currentAccount.SetAccountOwner(customerName);
-            bookAllProfitAccount.SetAccountOwner(customerName);
+            
 
         while(true)
         {
@@ -46,10 +46,12 @@ public class AccountManager
             }
             else if (operationsChoose == 3)
             {
+                
                 OperationInBookAllProfitAccount();
             }
             else if ( operationsChoose == 4)
             {
+                bookAllProfitAccount.SetAccountOwner(customerName);
                 DisplayAllAccountDetails();
         
                 
