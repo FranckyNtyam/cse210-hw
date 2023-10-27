@@ -14,7 +14,7 @@ public class SavingAccount : Account
     // create Constructor with one parameter
     public SavingAccount()
     {
-        _subscriptionRate = 0;
+        _subscriptionRate = 0.5;
     }
 
      // method that help to operate in a savings account

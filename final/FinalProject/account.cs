@@ -35,10 +35,11 @@ public abstract class Account
                 {
                     total += operation._amount;
                 }
-                else
+                if (operation._typeOfMovement == MovementOfAccount.Debtor)
                 {
                     total -= operation._amount;
                 }
+
             }
             return total;
         }
@@ -74,7 +75,7 @@ public abstract class Account
                 Console.Write("\t+");
                 Console.WriteLine(operation._amount);
             }
-            else
+            if (operation._typeOfMovement == MovementOfAccount.Debtor)
             {
                 Console.Write("\t-");
                 Console.WriteLine(operation._amount);

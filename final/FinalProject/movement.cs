@@ -5,6 +5,6 @@ public enum MovementOfAccount
    
     
         Credited,
-        Debtor
+        Debtor,
     
 }
