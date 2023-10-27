@@ -22,7 +22,7 @@ public abstract class Account
     {
         _accountOwner = owner;
     }
-
+     
     // Here, it's a read-only property only the getter is set. 
     public virtual decimal _balance
     {
@@ -31,20 +31,25 @@ public abstract class Account
             decimal total = 0;
             foreach (OperationOnAccount operation in _operations)
             {
-                if (operation._typeOfMovement == MovementOfAccount.Credited)
+                if (operation._typeOfMovement == MovementOfAccount.Credit)
                 {
                     total += operation._amount;
+                    
                 }
-                if (operation._typeOfMovement == MovementOfAccount.Debtor)
+                if (operation._typeOfMovement == MovementOfAccount.Debit)
                 {
                     total -= operation._amount;
+                    break;
                 }
+   
 
             }
             return total;
         }
+        
     }
-    OperationOnAccount operationOnAccount = new OperationOnAccount();
+    
+   
     // create contructor without parameters
     public Account()
     {
@@ -54,33 +59,45 @@ public abstract class Account
     // 
     public void Credited( decimal amount)
     {
-        operationOnAccount._amount = amount;
-        operationOnAccount._typeOfMovement = MovementOfAccount.Credited;
+        OperationOnAccount operationOnAccount = new OperationOnAccount { _amount=amount, _typeOfMovement = MovementOfAccount.Credit};
         _operations.Add(operationOnAccount);
+        
     
     }
      public void Debtor( decimal amount)
      {
-        operationOnAccount._amount = amount ;
-        operationOnAccount._typeOfMovement = MovementOfAccount.Debtor;
+       OperationOnAccount operationOnAccount = new OperationOnAccount { _amount=amount, _typeOfMovement = MovementOfAccount.Debit};
          _operations.Add(operationOnAccount);
      }
-     
-     public void DisplayOperations()
+
+    
+
+    public void DisplayOperations()
      {
+        List<string> opertionDone = new List<string>();
            foreach (OperationOnAccount operation in _operations )
         {
-            if (operation._typeOfMovement == MovementOfAccount.Credited)
+            if (operation._typeOfMovement == MovementOfAccount.Credit)
             {
-                Console.Write("\t+");
-                Console.WriteLine(operation._amount);
+                // Console.Write("\t+");
+                // Console.WriteLine(operation._amount);
+                opertionDone.Add($"\t+{operation._amount}");
+                
             }
-            if (operation._typeOfMovement == MovementOfAccount.Debtor)
+            if (operation._typeOfMovement == MovementOfAccount.Debit)
             {
-                Console.Write("\t-");
-                Console.WriteLine(operation._amount);
+                // Console.Write("\t-");
+                // Console.WriteLine(operation._amount);
+                opertionDone.Add($"\t-{operation._amount}");
+                break;
             }
+            
         }
+        foreach (string listoperation in opertionDone)
+        {
+            Console.WriteLine(listoperation);
+        }
+        
      }
 
       public abstract void DisplayAccountDetails();

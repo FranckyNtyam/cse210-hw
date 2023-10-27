@@ -4,7 +4,7 @@ public enum MovementOfAccount
 {
    
     
-        Credited,
-        Debtor,
+        Credit,
+        Debit
     
 }

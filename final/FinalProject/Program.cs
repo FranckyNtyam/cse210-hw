@@ -17,6 +17,7 @@ class Program
         AccountManager  accountManager = new AccountManager();
 
         accountManager.Star();
+
        
     }
 }
